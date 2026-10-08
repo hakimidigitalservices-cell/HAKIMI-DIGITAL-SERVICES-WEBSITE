@@ -1,0 +1,13 @@
+HAKIMI DIGITAL SERVICES - TRACK APPLICATION FIX
+
+The Track Application page now calls the secure Supabase RPC: track_application.
+
+IMPORTANT: Run the included file below ONCE in Supabase SQL Editor if this function is not already deployed:
+  supabase/track_application.sql
+
+After running it, test with:
+  HDS-2026-000001
+  HDS-2026-000002
+
+The RPC is SECURITY DEFINER and only returns the application matching the supplied Application ID.
+Do not expose the applications table publicly just to make tracking work.

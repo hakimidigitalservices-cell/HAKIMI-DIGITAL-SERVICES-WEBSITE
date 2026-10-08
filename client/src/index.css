@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-navy-900 bg-white antialiased;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    @apply bg-gold-500/20 text-navy-900;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-900 transition-all duration-200 hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-navy-200 bg-white px-6 py-3 text-sm font-semibold text-navy-800 transition-all duration-200 hover:border-navy-300 hover:bg-navy-50 active:scale-95;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-navy-800 hover:shadow-lg hover:shadow-navy-900/30 active:scale-95;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#1eb855] hover:shadow-lg hover:shadow-green-500/30 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-navy-100 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-navy-900/5 hover:border-gold-200;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder-navy-400 transition-colors focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/20;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-navy-600 transition-colors hover:text-navy-900;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-gold-500 transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-navy-900;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-gold-50 px-4 py-1.5 text-xs font-semibold tracking-[0.12em] uppercase text-gold-700;
+  }
+
+  .eyebrow-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-[0.12em] uppercase text-gold-300;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f5b700 0%, #fcd34d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(180deg, #102a43 0%, #243b53 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-grid-light {
+    background-image:
+      linear-gradient(rgba(10, 22, 40, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 22, 40, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(245, 183, 0, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-dots-light {
+    background-image: radial-gradient(circle, rgba(10, 22, 40, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .shadow-premium {
+    box-shadow: 0 1px 3px rgba(10, 22, 40, 0.04), 0 8px 24px rgba(10, 22, 40, 0.06);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 0 1px 3px rgba(10, 22, 40, 0.04), 0 16px 48px rgba(10, 22, 40, 0.1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #627d98;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334e68;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+/* Continuous right-to-left customer review train */
+.review-marquee {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  padding: 0.25rem 0 0.75rem;
+}
+.review-marquee::before,
+.review-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  z-index: 2;
+  pointer-events: none;
+}
+.review-marquee::before { left: 0; background: linear-gradient(to right, rgb(247 248 252), transparent); }
+.review-marquee::after { right: 0; background: linear-gradient(to left, rgb(247 248 252), transparent); }
+.review-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  animation: hakimi-review-marquee 55s linear infinite;
+  will-change: transform;
+}
+.review-marquee:hover .review-marquee-track { animation-play-state: paused; }
+.review-marquee-card {
+  width: min(390px, 82vw);
+  flex: 0 0 min(390px, 82vw);
+  min-height: 190px;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 1rem;
+  background: white;
+  padding: 1.35rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+@keyframes hakimi-review-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.625rem)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-marquee-track { animation: none; }
+}
+
+
+/* Premium offer presentation */
+.offer-premium-glow { box-shadow: 0 18px 60px rgba(15,23,42,.16); }

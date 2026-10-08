@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hakimidigitalservices.com/sitemap.xml
